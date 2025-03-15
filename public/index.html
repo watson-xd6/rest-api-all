@@ -12,6 +12,7 @@
     <div class="container">
         <h1>Daftar API</h1>
         <div class="api-list" id="api-container">
+        
             <!-- Instagram Downloader -->
             <div class="api-item">
                 <div class="api-header" onclick="toggleDescription('igdl')">
@@ -35,6 +36,19 @@
                     <p>API untuk mendownload video dari Facebook.</p>
                     <div class="api-endpoint">Endpoint: /api/fbdl?url=</div>
                     <button onclick="window.location.href='/api/fbdl?url='">Akses Endpoint</button>
+                </div>
+            </div>
+
+            <!-- Tiktok Downloader -->
+            <div class="api-item">
+                <div class="api-header" onclick="toggleDescription('ttdl')">
+                    <span class="api-method">GET</span>
+                    <span class="api-title">TikTok Downloader</span>
+                </div>
+                <div class="api-description" id="ttdl-description">
+                    <p>API untuk mendownload video dari TikTok.</p>
+                    <div class="api-endpoint">Endpoint: /api/ttdl?url=</div>
+                    <button onclick="window.location.href='/api/ttdl?url='">Akses Endpoint</button>
                 </div>
             </div>
 
