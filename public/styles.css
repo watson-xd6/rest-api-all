@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
+}
+
+.api-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.api-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.api-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.api-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara method dan judul */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.api-method {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    width: 60px; /* Lebar tetap untuk method */
+    text-align: center;
+}
+
+.api-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.api-title:hover {
+    text-decoration: underline;
+}
+
+.api-description {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    display: none; /* Deskripsi disembunyikan secara default */
+}
+
+.api-description p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.api-endpoint {
+    font-family: monospace;
+    color: #333;
+    background-color: #f1f1f1;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.api-description button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.api-description button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
