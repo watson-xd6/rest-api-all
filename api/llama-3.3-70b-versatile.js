@@ -1,1 +1,40 @@
-const _0x4b30fe=_0x4eff;function _0x4eff(_0x5b1bd6,_0x47fa0e){const _0x251fbd=_0x251f();return _0x4eff=function(_0x4effde,_0x3a5a8e){_0x4effde=_0x4effde-0x18b;let _0x3e26e7=_0x251fbd[_0x4effde];return _0x3e26e7;},_0x4eff(_0x5b1bd6,_0x47fa0e);}(function(_0x6680b7,_0x4fedef){const _0x63f327=_0x4eff,_0x364e34=_0x6680b7();while(!![]){try{const _0x46caa4=parseInt(_0x63f327(0x190))/0x1*(parseInt(_0x63f327(0x195))/0x2)+parseInt(_0x63f327(0x199))/0x3+parseInt(_0x63f327(0x18d))/0x4*(parseInt(_0x63f327(0x19a))/0x5)+parseInt(_0x63f327(0x1a5))/0x6*(parseInt(_0x63f327(0x19e))/0x7)+-parseInt(_0x63f327(0x197))/0x8+-parseInt(_0x63f327(0x194))/0x9*(-parseInt(_0x63f327(0x1a2))/0xa)+-parseInt(_0x63f327(0x19f))/0xb;if(_0x46caa4===_0x4fedef)break;else _0x364e34['push'](_0x364e34['shift']());}catch(_0x4bc4a2){_0x364e34['push'](_0x364e34['shift']());}}}(_0x251f,0x96815));const express=require(_0x4b30fe(0x1a0)),axios=require(_0x4b30fe(0x192)),router=express[_0x4b30fe(0x1a8)](),apiKey=global[_0x4b30fe(0x191)],model=_0x4b30fe(0x18c);async function callGroq(_0x1e602d){const _0x5430fc=_0x4b30fe,_0x430bf7='https://api.groq.com/openai/v1/chat/completions',_0x2a8247={'Content-Type':_0x5430fc(0x193),'Authorization':_0x5430fc(0x19c)+apiKey},_0x56a9df={'model':model,'messages':[{'role':_0x5430fc(0x1a7),'content':_0x1e602d}]};try{const _0x50cfd0=await axios[_0x5430fc(0x18b)](_0x430bf7,_0x56a9df,{'headers':_0x2a8247});return _0x50cfd0['data'][_0x5430fc(0x1a6)]?.[0x0]?.['message']?.[_0x5430fc(0x1a3)]||_0x5430fc(0x198);}catch(_0x19adc5){return console[_0x5430fc(0x1a1)](_0x5430fc(0x18e),_0x19adc5[_0x5430fc(0x1a4)]?.['data']||_0x19adc5['message']),_0x5430fc(0x18f);}}router[_0x4b30fe(0x19b)]('/',async(_0x923bc6,_0x433184)=>{const _0x4a1abe=_0x4b30fe,{content:_0x120aa4}=_0x923bc6['query'];if(!_0x120aa4)return _0x433184['status'](0x190)['json']({'status':0x190,'error':_0x4a1abe(0x196)});const _0x5b9980=await callGroq(_0x120aa4);_0x433184['json']({'status':0xc8,'model':model,'response':_0x5b9980});}),module[_0x4b30fe(0x19d)]=router;function _0x251f(){const _0x1c57c1=['content','response','11166yARhjB','choices','user','Router','post','llama-3.3-70b-versatile','40952NHxBSl','Error\x20fetching\x20Groq\x20API:','Error\x20fetching\x20response','4101GZJLDH','apigroq','axios','application/json','9GMpHIw','2wnoEDG','Parameter\x20\x22content\x22\x20tidak\x20boleh\x20kosong','7005048WSdget','No\x20response','1755225UdgsCk','15uaOKgF','get','Bearer\x20','exports','4599ACdfpf','10635658MpbFfg','express','error','6164110ZDLoAm'];_0x251f=function(){return _0x1c57c1;};return _0x251f();}
+const express = require('express');
+const axios = require('axios');
+
+const router = express.Router();
+const apiKey = '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';
+const model = 'llama-3.3-70b-versatile';
+
+async function callGroq(content) {
+    const url = 'https://api.groq.com/openai/v1/chat/completions';
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+    };
+
+    const body = {
+        model,
+        messages: [{ role: 'user', content }]
+    };
+
+    try {
+        const response = await axios.post(url, body, { headers });
+        return response.data.choices?.[0]?.message?.content || 'No response';
+    } catch (error) {
+        console.error('Error fetching Groq API:', error.response?.data || error.message);
+        return 'Error fetching response';
+    }
+}
+
+router.get('/', async (req, res) => {
+    const { content } = req.query;
+
+    if (!content) {
+        return res.status(400).json({ status: 400, error: 'Parameter "content" tidak boleh kosong' });
+    }
+
+    const response = await callGroq(content);
+    res.json({ status: 200, model, response });
+});
+
+module.exports = router;
