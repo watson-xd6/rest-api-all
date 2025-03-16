@@ -11,74 +11,109 @@
 <body>
     <div class="container">
         <h1>Daftar API</h1>
-        <div class="api-list" id="api-container">
-        
-            <!-- Instagram Downloader -->
-            <div class="api-item">
-                <div class="api-header" onclick="toggleDescription('igdl')">
-                    <span class="api-method">GET</span>
-                    <span class="api-title">Instagram Downloader</span>
-                </div>
-                <div class="api-description" id="igdl-description">
-                    <p>API untuk mendownload video atau gambar dari Instagram.</p>
-                    <div class="api-endpoint">Endpoint: /api/igdl?url=</div>
-                    <button onclick="window.location.href='/api/igdl?url='">Akses Endpoint</button>
-                </div>
-            </div>
 
-            <!-- Facebook Downloader -->
-            <div class="api-item">
-                <div class="api-header" onclick="toggleDescription('fbdl')">
-                    <span class="api-method">GET</span>
-                    <span class="api-title">Facebook Downloader</span>
+        <!-- Kategori Downloader -->
+        <div class="api-category">
+            <h2>Downloader</h2>
+            <div class="api-list">
+                <!-- Instagram Downloader -->
+                <div class="api-item">
+                    <div class="api-header" onclick="toggleDescription('igdl')">
+                        <span class="api-method">GET</span>
+                        <span class="api-title">Instagram Downloader</span>
+                        <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+                    </div>
+                    <div class="api-description" id="igdl-description">
+                        <p>API untuk mendownload video atau gambar dari Instagram.</p>
+                        <div class="api-endpoint">Endpoint: /api/igdl?url=</div>
+                        <button onclick="window.location.href='/api/igdl?url='">Akses Endpoint</button>
+                    </div>
                 </div>
-                <div class="api-description" id="fbdl-description">
-                    <p>API untuk mendownload video dari Facebook.</p>
-                    <div class="api-endpoint">Endpoint: /api/fbdl?url=</div>
-                    <button onclick="window.location.href='/api/fbdl?url='">Akses Endpoint</button>
-                </div>
-            </div>
 
-            <!-- Tiktok Downloader -->
-            <div class="api-item">
-                <div class="api-header" onclick="toggleDescription('ttdl')">
-                    <span class="api-method">GET</span>
-                    <span class="api-title">TikTok Downloader</span>
+                <!-- Facebook Downloader -->
+                <div class="api-item">
+                    <div class="api-header" onclick="toggleDescription('fbdl')">
+                        <span class="api-method">GET</span>
+                        <span class="api-title">Facebook Downloader</span>
+                        <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+                    </div>
+                    <div class="api-description" id="fbdl-description">
+                        <p>API untuk mendownload video dari Facebook.</p>
+                        <div class="api-endpoint">Endpoint: /api/fbdl?url=</div>
+                        <button onclick="window.location.href='/api/fbdl?url='">Akses Endpoint</button>
+                    </div>
                 </div>
-                <div class="api-description" id="ttdl-description">
-                    <p>API untuk mendownload video dari TikTok.</p>
-                    <div class="api-endpoint">Endpoint: /api/ttdl?url=</div>
-                    <button onclick="window.location.href='/api/ttdl?url='">Akses Endpoint</button>
-                </div>
-            </div>
 
-            <!-- GitHub Stalk -->
-            <div class="api-item">
-                <div class="api-header" onclick="toggleDescription('githubstalk')">
-                    <span class="api-method">GET</span>
-                    <span class="api-title">GitHub Stalk</span>
-                </div>
-                <div class="api-description" id="githubstalk-description">
-                    <p>API untuk melihat profil GitHub pengguna.</p>
-                    <div class="api-endpoint">Endpoint: /api/githubstalk?username=</div>
-                    <button onclick="window.location.href='/api/githubstalk?username='">Akses Endpoint</button>
-                </div>
-            </div>
-
-            <!-- Search Groups -->
-            <div class="api-item">
-                <div class="api-header" onclick="toggleDescription('searchgroups')">
-                    <span class="api-method">GET</span>
-                    <span class="api-title">Search Groups</span>
-                </div>
-                <div class="api-description" id="searchgroups-description">
-                    <p>API untuk mencari grup WhatsApp berdasarkan kata kunci.</p>
-                    <div class="api-endpoint">Endpoint: /api/searchgroups?q=</div>
-                    <button onclick="window.location.href='/api/searchgroups?q='">Akses Endpoint</button>
+                <!-- TikTok Downloader -->
+                <div class="api-item">
+                    <div class="api-header" onclick="toggleDescription('ttdl')">
+                        <span class="api-method">GET</span>
+                        <span class="api-title">TikTok Downloader</span>
+                        <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+                    </div>
+                    <div class="api-description" id="ttdl-description">
+                        <p>API untuk mendownload video dari TikTok.</p>
+                        <div class="api-endpoint">Endpoint: /api/ttdl?url=</div>
+                        <button onclick="window.location.href='/api/ttdl?url='">Akses Endpoint</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <footer>© 2025 API OwnBlox</footer>
+
+        <!-- Kategori Search -->
+        <div class="api-category">
+            <h2>Search</h2>
+            <div class="api-list">
+                <!-- GitHub Stalk -->
+                <div class="api-item">
+                    <div class="api-header" onclick="toggleDescription('githubstalk')">
+                        <span class="api-method">GET</span>
+                        <span class="api-title">GitHub Stalk</span>
+                        <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+                    </div>
+                    <div class="api-description" id="githubstalk-description">
+                        <p>API untuk melihat profil GitHub pengguna.</p>
+                        <div class="api-endpoint">Endpoint: /api/githubstalk?username=</div>
+                        <button onclick="window.location.href='/api/githubstalk?username='">Akses Endpoint</button>
+                    </div>
+                </div>
+
+                <!-- Search Groups -->
+                <div class="api-item">
+                    <div class="api-header" onclick="toggleDescription('searchgroups')">
+                        <span class="api-method">GET</span>
+                        <span class="api-title">Search Groups</span>
+                        <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+                    </div>
+                    <div class="api-description" id="searchgroups-description">
+                        <p>API untuk mencari grup WhatsApp berdasarkan kata kunci.</p>
+                        <div class="api-endpoint">Endpoint: /api/searchgroups?q=</div>
+                        <button onclick="window.location.href='/api/searchgroups?q='">Akses Endpoint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<!-- Kategori AI -->
+<div class="api-category">
+    <h2>AI</h2>
+    <div class="api-list">
+        <!-- LLaMA 3.3 70B Versatile API -->
+        <div class="api-item">
+            <div class="api-header" onclick="toggleDescription('llama-3.3-70b-versatile')">
+                <span class="api-method">GET</span>
+                <span class="api-title">llama 3.3 70B Versatile</span>
+                <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+            </div>
+            <div class="api-description" id="llama-3.3-70b-versatile-description">
+                <p>API untuk mengakses model LLaMA 3.3 70B yang serbaguna.</p>
+                <div class="api-endpoint">Endpoint: /api/llama-3.3-70b-versatile?content=</div>
+                <button onclick="window.location.href='/api/llama-3.3-70b-versatile?content='">Akses Endpoint</button>
+            </div>
+        </div>
+    </div>
+</div>
+        <footer>© 2025 API OwnBlox – Fast & Reliable API Services.</footer>
     </div>
 </body>
 </html>
