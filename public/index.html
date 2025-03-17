@@ -10,12 +10,27 @@
 </head>
 <body>
     <div class="container">
-        <h1>Daftar API</h1>
+        <h1>API List</h1>
 
         <!-- Kategori Downloader -->
         <div class="api-category">
             <h2>Downloader</h2>
             <div class="api-list">
+                
+                <!-- YouTube Downloader -->
+                <div class="api-item">
+                    <div class="api-header" onclick="toggleDescription('ytdl')">
+                        <span class="api-method">GET</span>
+                        <span class="api-title">YouTube Downloader</span>
+                        <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+                    </div>
+                    <div class="api-description" id="igdl-description">
+                        <p>API untuk mendownload video atau shorts dari YouTube.</p>
+                        <div class="api-endpoint">Endpoint: /api/ytdl?url=&format=</div>
+                        <button onclick="window.location.href='/api/ytdl?url=&format='">Akses Endpoint</button>
+                    </div>
+                </div>
+                
                 <!-- Instagram Downloader -->
                 <div class="api-item">
                     <div class="api-header" onclick="toggleDescription('igdl')">
