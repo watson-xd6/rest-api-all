@@ -47,7 +47,7 @@ function sendUpdateToClients() {
     });
 }
 
-const routes = ["igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "llama-3.3-70b-versatile"];
+const routes = ["ytdl", "igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "llama-3.3-70b-versatile"];
 routes.forEach((route) => {
     app.use(`/api/${route}`, require(`./api/${route}`));
 });
