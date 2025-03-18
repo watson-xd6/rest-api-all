@@ -31,23 +31,36 @@
             font-weight: bold;
             color: #007bff;
         }
+        #status {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
     </style>
 </head>
 <body>
     <div class="monitor-container">
         <h1>Total Requests</h1>
         <div id="total-requests">0</div>
+        <div id="status">Connected</div>
     </div>
 
     <script>
         const eventSource = new EventSource("/monitor");
+        const statusEl = document.getElementById("status");
+
+        eventSource.onopen = () => {
+            statusEl.textContent = "Connected";
+            statusEl.style.color = "green";
+        };
+
         eventSource.onmessage = (event) => {
             const data = JSON.parse(event.data);
             document.getElementById("total-requests").textContent = data.totalRequests;
         };
+
         eventSource.onerror = () => {
-            console.error("Failed to connect to SSE endpoint.");
-            eventSource.close();
+            statusEl.textContent = "Disconnected, Reconnecting...";
+            statusEl.style.color = "red";
         };
     </script>
 </body>
