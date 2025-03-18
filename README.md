@@ -14,6 +14,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   - **WhatsApp Groups Search (searchgroups)**: Mencari grup WhatsApp berdasarkan kata kunci.
   - **llama-3.3-70b-versatile (AI Model Llama)**:
   Model AI llama-3.3-70b-versatile yang cepat dan responsif, didukung oleh groq.
+  - **Screenshot Web**:
+  Screenshot website dengan mudah dan cepat.
 
 - **Mudah Digunakan**: API dapat diakses dengan mudah setelah server dijalankan.
 - **Dokumentasi Lengkap**: Semua endpoint disertai dokumentasi yang jelas dan mudah dipahami.
