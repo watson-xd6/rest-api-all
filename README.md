@@ -6,6 +6,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
 - **Beragam Endpoint API**: Menyediakan berbagai API untuk kebutuhan pengembangan, termasuk:
   - **YouTube Downloader (ytdl)**:
   Mengunduh video atau shorts dari YouTube.
+  - **Twitter Downloader**:
+  Mengunduh video atau gambar dari Twitter/X.
   - **Facebook Downloader (fbdl)**: Mengunduh video dari Facebook.
   - **Instagram Downloader (igdl)**: Mengunduh foto atau video dari Instagram.
   - **TikTok Downloader (ttdl)**:
