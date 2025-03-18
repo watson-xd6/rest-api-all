@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 
         const response = await axios.get(screenshotUrl, {
             responseType: 'arraybuffer',
+            timeout: 10000,
             headers: {
                 'User-Agent': 'Mozilla/5.0'
             }
@@ -33,7 +34,6 @@ router.get('/', async (req, res) => {
             });
         }
     } catch (err) {
-        console.error('Error:', err.message);
         res.status(500).json({
             status: 500,
             error: 'Terjadi kesalahan, coba lagi nanti!'
