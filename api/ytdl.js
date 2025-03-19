@@ -1,41 +1,49 @@
 const express = require('express');
-const axios = require('axios');
 const router = express.Router();
+const axios = require('axios');
 
-async function NoTube(url, format = 'mp4', lang = 'id', subscribed = 'false') {
-    try {
-        const response = await axios({
-            method: 'post',
-            url: 'https://s53.notube.lol/recover_weight.php',
-            headers: {
-                'Accept': 'text/html, */*; q=0.01',
-                'Accept-Language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-                'Connection': 'keep-alive',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'Origin': 'https://notube.lol',
-                'Referer': 'https://notube.lol/',
-                'Sec-Fetch-Dest': 'empty',
-                'Sec-Fetch-Mode': 'cors',
-                'Sec-Fetch-Site': 'same-site',
-                'User-Agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36',
-                'sec-ch-ua': '"Not A(Brand";v="8", "Chromium";v="132"',
-                'sec-ch-ua-mobile': '?1',
-                'sec-ch-ua-platform': '"Android"'
-            },
-            data: `url=${encodeURIComponent(url)}&format=${encodeURIComponent(format)}&lang=${encodeURIComponent(lang)}&subscribed=${encodeURIComponent(subscribed)}`,
-            responseType: 'json'
-        });
+async function ytmp3(url, format = 'mp3') {
+    const headers = {
+        "accept": "*/*",
+        "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
+        "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\"",
+        "sec-ch-ua-mobile": "?1",
+        "sec-ch-ua-platform": "\"Android\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+        "Referer": "https://id.ytmp3.mobi/",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+    };
 
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching video data:', error);
-        throw error;
+    const initial = await axios.get(`https://d.ymcdn.org/api/v1/init?p=y&23=1llum1n471&_=${Math.random()}`, { headers });
+    const init = initial.data;
+
+    const id = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/))([^&?/]+)/)?.[1];
+    if (!id) throw new Error('Video ID tidak ditemukan!');
+
+    const convertURL = `${init.convertURL}&v=${id}&f=${format}&_=${Math.random()}`;
+    const converts = await axios.get(convertURL, { headers });
+    const convert = converts.data;
+
+    let info = {};
+    for (let i = 0; i < 3; i++) {
+        const progress = await axios.get(convert.progressURL, { headers });
+        info = progress.data;
+        if (info.progress == 3) break;
     }
+
+    if (!convert.downloadURL) throw new Error('Gagal mendapatkan link download.');
+
+    return {
+        url: convert.downloadURL,
+        title: info.title || 'No Title'
+    };
 }
 
 router.get('/', async (req, res) => {
     const url = req.query.url;
-    const format = req.query.format || 'mp4';
+    const format = req.query.format || 'mp3';
 
     if (!url) {
         return res.status(400).json({
@@ -45,23 +53,15 @@ router.get('/', async (req, res) => {
     }
 
     try {
-        const data = await NoTube(url, format);
-
-        if (!data || !data.dlink) {
-            return res.status(500).json({
-                status: 500,
-                error: "Gagal mendapatkan link video."
-            });
-        }
-
+        const data = await ytmp3(url, format);
         res.json({
             status: 200,
             source: url,
             format,
-            download_link: data.dlink
+            title: data.title,
+            download_link: data.url
         });
     } catch (err) {
-        console.error("Error:", err.message);
         res.status(500).json({
             status: 500,
             error: 'Terjadi kesalahan, coba lagi nanti!'
