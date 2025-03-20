@@ -140,6 +140,20 @@
                 <button onclick="window.location.href='/api/llama-3.3-70b-versatile?content='">Akses Endpoint</button>
             </div>
         </div>
+        
+        <!-- Txt2Img -->
+        <div class="api-item">
+            <div class="api-header" onclick="toggleDescription('txt2img')">
+                <span class="api-method">GET</span>
+                <span class="api-title">Txt2Img</span>
+                <span class="api-status-badge online">ONLINE</span> <!-- Badge Status -->
+            </div>
+            <div class="api-description" id="txt2img-description">
+                <p>API untuk membuat gambar dari AI dengan style yang banyak.</p>
+                <div class="api-endpoint">Endpoint: /api/txt2img?prompt=&style=</div>
+                <button onclick="window.location.href='/api/txt2img?prompt=&style='">Akses Endpoint</button>
+            </div>
+        </div>
     </div>
 </div>
 
