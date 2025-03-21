@@ -14,11 +14,13 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   Mengunduh video dari TikTok.
   - **GitHub Stalker (githubstalk)**: Mencari informasi terkait akun GitHub.
   - **WhatsApp Groups Search (searchgroups)**: Mencari grup WhatsApp berdasarkan kata kunci.
+  - **TikTok Search (ttsearch)**:
+  Mencari video dari TikTok berdasarkan query.
   - **llama-3.3-70b-versatile (AI Model Llama)**:
   Model AI llama-3.3-70b-versatile yang cepat dan responsif, didukung oleh groq.
   - **Txt2Img (Text to Image)**:
   Membuat gambar dari AI didukung oleh DeepImage.
-  - **Screenshot Web**:
+  - **Screenshot Web (ssweb)**:
   Screenshot website dengan mudah dan cepat.
 
 - **Mudah Digunakan**: API dapat diakses dengan mudah setelah server dijalankan.
