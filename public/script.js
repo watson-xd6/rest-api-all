@@ -57,7 +57,14 @@ const apiData = {
             status: "online",
             description: "API untuk mencari video dari TikTok berdasarkan query.",
             endpoint: "/api/ttsearch?q="
-        }         
+        },
+        {
+            method: "GET",
+            title: "YouTube Search",
+            status: "online",
+            description: "API untuk mencari video dari YouTube berdasarkan kata kunci atau query.",
+            endpoint: "/api/ytsearch?q="
+        }    
     ],
     "AI": [
         {
