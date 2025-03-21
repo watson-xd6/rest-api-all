@@ -50,7 +50,14 @@ const apiData = {
             status: "online",
             description: "API untuk mencari grup WhatsApp berdasarkan kata kunci.",
             endpoint: "/api/searchgroups?q="
-        }
+        },
+        {
+            method: "GET",
+            title: "TikTok Search",
+            status: "online",
+            description: "API untuk mencari video dari TikTok berdasarkan query.",
+            endpoint: "/api/ttsearch?q="
+        }         
     ],
     "AI": [
         {
