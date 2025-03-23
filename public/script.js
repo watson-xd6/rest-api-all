@@ -94,6 +94,13 @@ const apiData = {
     "Fun": [
         {
             method: "GET",
+            title: "Cek Khodam",
+            status: "online",
+            description: "Permainan seru yang menunjukkan khodam seseorang berdasarkan nama.",
+            endpoint: "/api/cekkhodam?nama="
+        },
+        {
+            method: "GET",
             title: "Tahu Kah Kamu?",
             status: "online",
             description: "Permainan seru yang menunjukkan fakta2 random yang mungkin belom kamu ketahui.",
