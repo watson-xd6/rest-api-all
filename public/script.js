@@ -90,6 +90,15 @@ const apiData = {
             description: "API untuk screenshot website dengan mudah.",
             endpoint: "/api/ssweb?url="
         }
+    ],
+    "Fun": [
+        {
+            method: "GET",
+            title: "Tahu Kah Kamu?",
+            status: "online",
+            description: "Permainan seru yang menunjukkan fakta2 random yang mungkin belom kamu ketahui.",
+            endpoint: "/api/tahukahkamu"
+        }
     ]
 };
 
