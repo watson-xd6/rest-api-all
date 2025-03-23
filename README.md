@@ -24,6 +24,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   Membuat gambar dari AI didukung oleh DeepImage.
   - **Screenshot Web (ssweb)**:
   Screenshot website dengan mudah dan cepat.
+  - **Cek Khodam (cekkhodam)**:
+  Permainan seru menunjukkan khodam seseorang berdasarkan nama.
   - **Tahu Kah Kamu (tahukahkamu)**:
   Permainan seru menunjukan fakta2 random yang mungkin kamu gak ketahui.
 
