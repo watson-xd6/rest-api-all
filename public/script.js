@@ -106,7 +106,16 @@ const apiData = {
             description: "Permainan seru yang menunjukkan fakta2 random yang mungkin belom kamu ketahui.",
             endpoint: "/api/tahukahkamu"
         }
-    ]
+    ],
+    "Sticker": [
+        {
+            method: "GET",
+            title: "Brat Image",
+            status: "online",
+            description: "Mengubah text kamu menjadi gambar brat.",
+            endpoint: "/api/brat?text="
+        }
+    ]  
 };
 
 function createApiItem(api) {
