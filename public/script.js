@@ -89,6 +89,13 @@ const apiData = {
             status: "online",
             description: "API untuk screenshot website dengan mudah.",
             endpoint: "/api/ssweb?url="
+        },
+        {
+            method: "GET",
+            title: "Translate",
+            status: "online",
+            description: "API untuk translate bahasa apapun menjadi yang kamu inginkan.",
+            endpoint: "/api/translate?text=&to="
         }
     ],
     "Fun": [
