@@ -94,7 +94,7 @@ const apiData = {
             method: "GET",
             title: "Translate",
             status: "online",
-            description: "API untuk translate bahasa apapun menjadi yang kamu inginkan.",
+            description: "API untuk translate bahasa apapun menjadi yang kamu inginkan berdasarkan kode negara, misal ID untuk Indonesia.",
             endpoint: "/api/translate?text=&to="
         }
     ],
