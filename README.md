@@ -26,6 +26,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   Screenshot website dengan mudah dan cepat.
   - **Translate (tr)**:
   Translate bahasa apapun dengan mudah dan support berbagai bahasa di dunia.
+  - **Nulis (text 2 image tulisan)**:
+  Mengubah query text kamu menjadi gambar buku beserta tulisan kamu.
   - **Cek Khodam (cekkhodam)**:
   Permainan seru menunjukkan khodam seseorang berdasarkan nama.
   - **Tahu Kah Kamu (tahukahkamu)**:

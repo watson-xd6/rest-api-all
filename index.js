@@ -49,7 +49,7 @@ function sendUpdateToClients() {
     });
 }
 
-const routes = ["ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "ttsearch", "ytsearch", "llama-3.3-70b-versatile", "txt2img", "ssweb", "translate", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews"];
+const routes = ["ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "ttsearch", "ytsearch", "llama-3.3-70b-versatile", "txt2img", "ssweb", "translate", "nulis", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews"];
 routes.forEach(route => {
     app.use(`/api/${route}`, require(`./api/${route}`));
 });
