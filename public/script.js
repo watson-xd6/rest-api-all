@@ -137,7 +137,8 @@ const apiData = {
             status: "online",
             description: "Mendapatkan informasi berita terbaru dari Detik News.",
             endpoint: "/api/detiknews"
-        }      
+        }
+    ]      
 };
 
 function createApiItem(api) {
