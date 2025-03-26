@@ -125,7 +125,7 @@ const apiData = {
         {
             method: "POST",
             title: "Quoted Chat",
-            status: "online",
+            status: "offline",
             description: "Membuat gambar dengan desain quoted chat yang bisa kamu custom nama, color, foto profile, dan lainnya.",
             endpoint: "/api/qc"
         }
