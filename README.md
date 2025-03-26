@@ -34,6 +34,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   Mengubah text kamu menjadi gambar brat.
   - **Qc (Quoted Chat)**:
   Membuat gambar dengan desain quoted chat yang bisa kamu custom nama, color, foto profile, dan lainnya.
+  - **Detik News (detiknews)**:
+  Mencari informasi berita terbaru dari Detik News.
 
 - **Mudah Digunakan**: API dapat diakses dengan mudah setelah server dijalankan.
 - **Dokumentasi Lengkap**: Semua endpoint disertai dokumentasi yang jelas dan mudah dipahami.
