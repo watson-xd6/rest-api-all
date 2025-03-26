@@ -96,6 +96,13 @@ const apiData = {
             status: "online",
             description: "API untuk translate bahasa apapun menjadi yang kamu inginkan.",
             endpoint: "/api/translate?text=&to="
+        },
+        {
+            method: "GET",
+            title: "Nulis"
+            status: "online",
+            description: "Membuat gambar buku beserta tulisan berdasarkan dari query text kamu.",
+            endpoint: "/api/nulis?text="
         }
     ],
     "Fun": [
