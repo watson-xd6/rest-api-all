@@ -99,7 +99,7 @@ const apiData = {
         },
         {
             method: "GET",
-            title: "Nulis"
+            title: "Nulis",
             status: "online",
             description: "Membuat gambar buku beserta tulisan berdasarkan dari query text kamu.",
             endpoint: "/api/nulis?text="
