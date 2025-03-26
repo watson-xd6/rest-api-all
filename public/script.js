@@ -94,7 +94,7 @@ const apiData = {
             method: "GET",
             title: "Translate",
             status: "online",
-            description: "API untuk translate bahasa apapun menjadi yang kamu inginkan berdasarkan kode negara, misal ID untuk Indonesia.",
+            description: "API untuk translate bahasa apapun menjadi yang kamu inginkan.",
             endpoint: "/api/translate?text=&to="
         }
     ],
@@ -121,6 +121,13 @@ const apiData = {
             status: "online",
             description: "Mengubah text kamu menjadi gambar brat.",
             endpoint: "/api/brat?text="
+        },
+        {
+            method: "POST",
+            title: "Quoted Chat",
+            status: "online",
+            description: "Membuat gambar dengan desain quoted chat yang bisa kamu custom nama, color, foto profile, dan lainnya.",
+            endpoint: "/api/qc"
         }
     ]  
 };
