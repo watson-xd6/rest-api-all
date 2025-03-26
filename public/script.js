@@ -129,7 +129,15 @@ const apiData = {
             description: "Membuat gambar dengan desain quoted chat yang bisa kamu custom nama, color, foto profile, dan lainnya.",
             endpoint: "/api/qc"
         }
-    ]  
+    ],
+    "Berita": [
+        {
+            method: "GET",
+            title: "Detik News",
+            status: "online",
+            description: "Mendapatkan informasi berita terbaru dari Detik News.",
+            endpoint: "/api/detiknews"
+        }      
 };
 
 function createApiItem(api) {
