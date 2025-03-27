@@ -12,7 +12,7 @@ const limiter = rateLimit({
     windowMs: 60 * 1000,
     max: 10,
     message: { error: "Terlalu banyak permintaan, coba lagi nanti." },
-    keyGenerator: (req) => req.ip,
+    keyGenerator: (req) => req.headers["x-forwarded-for"] || req.ip,
     standardHeaders: true,
     legacyHeaders: false
 });
