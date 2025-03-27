@@ -11,7 +11,8 @@ let clients = [];
 const limiter = rateLimit({
     windowMs: 60 * 1000,
     max: 10,
-    message: { error: "Terlalu banyak permintaan, coba lagi nanti." }
+    message: { error: "Terlalu banyak permintaan, coba lagi nanti." },
+    keyGenerator: (req) => req.ip
 });
 
 app.use(cors());
@@ -56,11 +57,9 @@ function sendUpdateToClients() {
     });
 }
 
-app.use("/api/", limiter);
-
 const routes = ["ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "ttsearch", "ytsearch", "llama-3.3-70b-versatile", "txt2img", "ssweb", "translate", "nulis", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews"];
 routes.forEach(route => {
-    app.use(`/api/${route}`, require(`./api/${route}`));
+    app.use(`/api/${route}`, limiter, require(`./api/${route}`));
 });
 
 module.exports = app;
