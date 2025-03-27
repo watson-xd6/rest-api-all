@@ -1,11 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 
 let totalRequests = 0;
 let clients = [];
+
+const limiter = rateLimit({
+    windowMs: 60 * 1000,
+    max: 10,
+    message: { error: "Terlalu banyak permintaan, coba lagi nanti." }
+});
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
@@ -48,6 +55,8 @@ function sendUpdateToClients() {
         client.res.write(`data: ${JSON.stringify({ totalRequests })}\n\n`);
     });
 }
+
+app.use("/api/", limiter);
 
 const routes = ["ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "ttsearch", "ytsearch", "llama-3.3-70b-versatile", "txt2img", "ssweb", "translate", "nulis", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews"];
 routes.forEach(route => {
