@@ -144,6 +144,13 @@ const apiData = {
             status: "online",
             description: "Mendapatkan informasi berita terbaru dari Detik News.",
             endpoint: "/api/detiknews"
+        },
+        { 
+            method: "GET",
+            title: "Kompas",
+            status: "online",
+            description: "Mendapatkan informasi berita terbaru dari Kompas",
+            endpoint: "/api/kompasnews"
         }
     ]      
 };
