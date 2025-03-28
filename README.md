@@ -38,6 +38,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   Membuat gambar dengan desain quoted chat yang bisa kamu custom nama, color, foto profile, dan lainnya.
   - **Detik News (detiknews)**:
   Mencari informasi berita terbaru dari Detik News.
+  - **Kompas (kompas.com)**:
+  Mencari informasi berita terbaru dari Kompas.
 
 - **Mudah Digunakan**: API dapat diakses dengan mudah setelah server dijalankan.
 - **Dokumentasi Lengkap**: Semua endpoint disertai dokumentasi yang jelas dan mudah dipahami.
