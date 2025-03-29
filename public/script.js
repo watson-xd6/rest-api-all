@@ -110,6 +110,20 @@ const apiData = {
             status: "online",
             description: "Mendapatkan informasi Cuaca semua kota di dunia berdasarkan query kota.",
             endpoint: "/api/cuaca?kota="
+        },
+        {
+            method: "GET",
+            title: "QR Code Generator",
+            status: "online",
+            description: "Membuat QR secara otomatis dengan gampang.",
+            endpoint: "/api/qrcode?text="
+        },
+        {
+            method: "POST",
+            title: "Read QR Code",
+            status: "online",
+            description: "Membaca QR secara otomatis dengan gampang.",
+            endpoint: "/api/readqr"
         }
     ],
     "Fun": [
