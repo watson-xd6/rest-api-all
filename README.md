@@ -28,6 +28,8 @@ Rest API OwnBlox adalah proyek yang menyediakan berbagai endpoint API untuk berb
   Translate bahasa apapun dengan mudah dan support berbagai bahasa di dunia.
   - **Nulis (text 2 image tulisan)**:
   Mengubah query text kamu menjadi gambar buku beserta tulisan kamu.
+  - **Cuaca (informasi cuaca)**:
+  Mendapatkan informasi cuaca seluruh dunia berdasarkan query kota kamu.
   - **Cek Khodam (cekkhodam)**:
   Permainan seru menunjukkan khodam seseorang berdasarkan nama.
   - **Tahu Kah Kamu (tahukahkamu)**:
