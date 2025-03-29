@@ -103,6 +103,13 @@ const apiData = {
             status: "online",
             description: "Membuat gambar buku beserta tulisan berdasarkan dari query text kamu.",
             endpoint: "/api/nulis?text="
+        },
+        {
+            method: "GET",
+            title: "Cuaca",
+            status: "online",
+            description: "Mendapatkan informasi Cuaca semua kota di dunia berdasarkan query kota.",
+            endpoint: "/api/cuaca?kota="
         }
     ],
     "Fun": [
