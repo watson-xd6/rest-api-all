@@ -117,13 +117,6 @@ const apiData = {
             status: "online",
             description: "Membuat QR secara otomatis dengan gampang.",
             endpoint: "/api/qrcode?text="
-        },
-        {
-            method: "POST",
-            title: "Read QR Code",
-            status: "online",
-            description: "Membaca QR secara otomatis dengan gampang.",
-            endpoint: "/api/readqr"
         }
     ],
     "Fun": [
