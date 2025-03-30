@@ -116,7 +116,14 @@ const apiData = {
             title: "QR Code Generator",
             status: "online",
             description: "Membuat QR secara otomatis dengan gampang.",
-            endpoint: "/api/qrcodegenerator?text="
+            endpoint: "/api/qrcode?text="
+        },
+        {
+            method: "GET",
+            title: "Credit Card Generator",
+            status: "online",
+            description: "Fake generator Credit Card hanya untuk Fun",
+            endpoint: "/api/vccgenerator?type=&count="
         }
     ],
     "Fun": [
