@@ -123,7 +123,7 @@ const apiData = {
             title: "Credit Card Generator",
             status: "online",
             description: "Fake generator Credit Card hanya untuk Fun",
-            endpoint: "/api/vccgenerator?type=&count="
+            endpoint: "/api/vcc?type=&count="
         }
     ],
     "Fun": [
