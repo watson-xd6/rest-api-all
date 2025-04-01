@@ -34,6 +34,13 @@ const apiData = {
             status: "online",
             description: "API untuk mendownload video dari TikTok.",
             endpoint: "/api/ttdl?url="
+        },
+        {
+            method: "GET",
+            title: "GitHub Cloning",
+            status: "online",
+            description: "Cloning repositori dari GitHub.",
+            endpoint: "/api/gitclone?url="
         }
     ],
     "Search": [
