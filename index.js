@@ -61,7 +61,7 @@ function sendUpdateToClients() {
     });
 }
 
-const routes = ["ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "githubstalk", "searchgroups", "ttsearch", "ytsearch", "llama-3.3-70b-versatile", "txt2img", "ssweb", "translate", "nulis", "cuaca", "qrcodegenerator", "vcc", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews", "kompasnews"];
+const routes = ["ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "gitclone", "githubstalk", "searchgroups", "ttsearch", "ytsearch", "llama-3.3-70b-versatile", "txt2img", "ssweb", "translate", "nulis", "cuaca", "qrcodegenerator", "vcc", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews", "kompasnews"];
 routes.forEach(route => {
     app.use(`/api/${route}`, limiter, require(`./api/${route}`));
 });
