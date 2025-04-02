@@ -83,6 +83,13 @@ const apiData = {
         },
         {
             method: "GET",
+            title: "Gemini AI",
+            status: "online",
+            description: "API untuk mengakses AI model Gemini yang serbaguna.",
+            endpoint: "/api/gemini?text="
+        },
+        {
+            method: "GET",
             title: "Txt2Img",
             status: "online",
             description: "API untuk membuat gambar dari AI dengan style yang banyak.",
