@@ -130,7 +130,7 @@ const apiData = {
             title: "QR Code Generator",
             status: "online",
             description: "Membuat QR secara otomatis dengan gampang.",
-            endpoint: "/api/qrcode?text="
+            endpoint: "/api/qrcodegenerator?text="
         },
         {
             method: "GET",
