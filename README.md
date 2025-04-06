@@ -4,7 +4,7 @@ OwnBlox adalah Rest API berbasis Node.js & Express.js yang menyediakan berbagai 
 
 ## Fitur Utama
 - **Downloader**: YouTube, Twitter/X, Facebook, Instagram, TikTok, GitHub 
-- **Search**: YouTube, TikTok, WhatsApp Groups, GitHub Stalker  
+- **Search**: YouTube, TikTok, WhatsApp Groups, GitHub Stalker, NPM Search  
 - **AI & Image**: Llama AI, Gemini AI Text-to-Image, Brat Image, Quoted Chat  
 - **Tools**: Screenshot Web, QR Code Generator, Translate, Nulis  
 - **Information**: Cuaca, Detik News, Kompas  
