@@ -1,73 +1,54 @@
-const express = require('express')
-const router = express.Router()
-const axios = require('axios')
+const express = require('express');
+const axios = require('axios');
+const FormData = require('form-data');
 
-async function ytmp3(url, format = 'mp3') {
-    const headers = {
-        "accept": "*/*",
-        "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
-        "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\"",
-        "sec-ch-ua-mobile": "?1",
-        "sec-ch-ua-platform": "\"Android\"",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "cross-site",
-        "Referer": "https://id.ytmp3.mobi/",
-        "Referrer-Policy": "strict-origin-when-cross-origin"
-    }
+const router = express.Router();
 
-    const initial = await axios.get(`https://d.ymcdn.org/api/v1/init?p=y&23=1llum1n471&_=${Math.random()}`, { headers, timeout: 8000 })
-    const init = initial.data
+async function getVideoData(url, format = 'mp4') {
+  try {
+    const formDataInfo = new FormData();
+    formDataInfo.append('url', url);
 
-    const id = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/))([^&?/]+)/)?.[1]
-    if (!id) throw new Error('Video ID tidak ditemukan!')
+    const infoResponse = await axios.post('https://ytdown.siputzx.my.id/api/get-info', formDataInfo, {
+      headers: formDataInfo.getHeaders()
+    });
 
-    const convertURL = `${init.convertURL}&v=${id}&f=${format}&_=${Math.random()}`
-    const converts = await axios.get(convertURL, { headers, timeout: 8000 })
-    const convert = converts.data
+    const info = infoResponse.data;
 
-    let info = {}
-    for (let i = 0; i < 3; i++) {
-        const progress = await axios.get(convert.progressURL, { headers, timeout: 8000 })
-        info = progress.data
-        if (info.progress == 3) break
-        await new Promise(resolve => setTimeout(resolve, 1500))
-    }
+    const formDataDownload = new FormData();
+    formDataDownload.append('id', info.id);
+    formDataDownload.append('format', format);
+    formDataDownload.append('info', JSON.stringify(info));
 
-    if (!convert.downloadURL) throw new Error('Gagal mendapatkan link download.')
+    const downloadResponse = await axios.post('https://ytdown.siputzx.my.id/api/download', formDataDownload, {
+      headers: formDataDownload.getHeaders()
+    });
+
+    if (!downloadResponse.data.download_url) throw new Error('Gagal mendapatkan link unduhan');
 
     return {
-        url: convert.downloadURL,
-        title: info.title || 'No Title'
-    }
+      title: info.title,
+      thumbnail: info.thumbnail,
+      format,
+      download_url: `https://ytdown.siputzx.my.id${downloadResponse.data.download_url}`
+    };
+  } catch (e) {
+    throw new Error(`Gagal mengambil data video: ${e.message}`);
+  }
 }
 
-router.get('/', async (req, res) => {
-    const url = req.query.url
-    const format = req.query.format || 'mp3'
+router.post('/', async (req, res) => {
+  const { url, format } = req.body;
+  if (!url) return res.status(400).json({ status: 400, error: 'Parameter "url" wajib diisi.' });
 
-    if (!url) {
-        return res.status(400).json({
-            status: 400,
-            error: 'Masukkan URL YouTube!'
-        })
-    }
+  const chosenFormat = ['mp3', 'mp4'].includes((format || '').toLowerCase()) ? format.toLowerCase() : 'mp4';
 
-    try {
-        const data = await ytmp3(url, format)
-        res.json({
-            status: 200,
-            source: url,
-            format,
-            title: data.title,
-            download_link: data.url
-        })
-    } catch (err) {
-        res.status(500).json({
-            status: 500,
-            error: 'Terjadi kesalahan, coba lagi nanti!'
-        })
-    }
-})
+  try {
+    const result = await getVideoData(url, chosenFormat);
+    res.status(200).json({ status: 200, result });
+  } catch (err) {
+    res.status(500).json({ status: 500, error: err.message });
+  }
+});
 
-module.exports = router
+module.exports = router;
