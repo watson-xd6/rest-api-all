@@ -4,7 +4,10 @@ const FormData = require('form-data');
 
 const router = express.Router();
 
-async function getVideoData(url, format = 'mp4') {
+router.get('/', async (req, res) => {
+  const { url, format = 'mp4' } = req.query;
+  if (!url) return res.status(400).json({ status: 400, error: 'Parameter url diperlukan' });
+
   try {
     const formDataInfo = new FormData();
     formDataInfo.append('url', url);
@@ -24,30 +27,21 @@ async function getVideoData(url, format = 'mp4') {
       headers: formDataDownload.getHeaders()
     });
 
-    if (!downloadResponse.data.download_url) throw new Error('Gagal mendapatkan link unduhan');
+    if (!downloadResponse.data.download_url) {
+      return res.status(500).json({ status: 500, error: 'Gagal mendapatkan link unduhan' });
+    }
 
-    return {
-      title: info.title,
-      thumbnail: info.thumbnail,
-      format,
-      download_url: `https://ytdown.siputzx.my.id${downloadResponse.data.download_url}`
-    };
-  } catch (e) {
-    throw new Error(`Gagal mengambil data video: ${e.message}`);
-  }
-}
-
-router.post('/', async (req, res) => {
-  const { url, format } = req.body;
-  if (!url) return res.status(400).json({ status: 400, error: 'Parameter "url" wajib diisi.' });
-
-  const chosenFormat = ['mp3', 'mp4'].includes((format || '').toLowerCase()) ? format.toLowerCase() : 'mp4';
-
-  try {
-    const result = await getVideoData(url, chosenFormat);
-    res.status(200).json({ status: 200, result });
-  } catch (err) {
-    res.status(500).json({ status: 500, error: err.message });
+    res.json({
+      status: 200,
+      result: {
+        title: info.title,
+        thumbnail: info.thumbnail,
+        format,
+        download_url: `https://ytdown.siputzx.my.id${downloadResponse.data.download_url}`
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ status: 500, error: error.message });
   }
 });
 
