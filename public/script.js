@@ -78,7 +78,14 @@ const apiData = {
             status: "online",
             description: "Mencari package/module/library yang tersedia berdasarkan query(q) kamu.",
             endpoint: "/api/npmsearch?q="
-        }  
+        },
+        {
+            method: "GET",
+            title: "Pinterest",
+            status: "online",
+            description: "Mencari gambar di Pinterest berdasarkan query (q) kamu.",
+            endpoint: "/api/pinterest?q="
+        }
     ],
     "AI": [
         {
