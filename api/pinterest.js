@@ -25,7 +25,7 @@ async function getCookies() {
   }
 }
 
-router.get('/pinterest', async (req, res) => {
+router.get('/', async (req, res) => {
   const query = req.query.q;
   if (!query) return res.status(400).json({ status: 400, error: 'Query parameter `q` is required' });
 
