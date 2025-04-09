@@ -45,13 +45,28 @@ async function pinterest(query) {
     };
 
     const headers = {
-      'accept': 'application/json, text/javascript, */*, q=0.01',
-      'accept-language': 'en-US,en;q=0.9',
-      'cookie': cookies,
-      'referer': 'https://www.pinterest.com/',
-      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/133.0.0.0 Safari/537.36',
-      'x-requested-with': 'XMLHttpRequest',
-    };
+  'accept': 'application/json, text/javascript, */*, q=0.01',
+  'accept-encoding': 'gzip, deflate',
+  'accept-language': 'en-US,en;q=0.9',
+  'cookie': cookies,
+  'dnt': '1',
+  'referer': 'https://www.pinterest.com/',
+  'sec-ch-ua': '"Not(A:Brand";v="99", "Microsoft Edge";v="133", "Chromium";v="133"',
+  'sec-ch-ua-full-version-list': '"Not(A:Brand";v="99.0.0.0", "Microsoft Edge";v="133.0.3065.92", "Chromium";v="133.0.6943.142"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-model': '""',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-ch-ua-platform-version': '"10.0.0"',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-origin',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0',
+  'x-app-version': 'c056fb7',
+  'x-pinterest-appstate': 'active',
+  'x-pinterest-pws-handler': 'www/[username]/[slug].js',
+  'x-pinterest-source-url': '/hargr003/cat-pictures/',
+  'x-requested-with': 'XMLHttpRequest'
+};
 
     const { data } = await axios.get(url, {
       httpsAgent: agent,
