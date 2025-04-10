@@ -17,7 +17,7 @@ const apiData = {
         {
             method: "GET",
             title: "Instagram Downloader",
-            status: "online",
+            status: "offline",
             description: "API untuk mendownload video atau gambar dari Instagram.",
             endpoint: "/api/igdl?url="
         },
