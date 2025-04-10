@@ -41,6 +41,13 @@ const apiData = {
             status: "online",
             description: "Cloning repositori dari GitHub.",
             endpoint: "/api/gitclone?url="
+        },
+        {
+            method: "GET",
+            title: "Spotify Downloader",
+            status: "online",
+            description: "Download semua lagu dari Spotify dengan mudah.",
+            endpoint: "/api/spotifydl?url="
         }
     ],
     "Search": [
@@ -85,6 +92,13 @@ const apiData = {
             status: "online",
             description: "Mencari gambar di Pinterest berdasarkan query (q) kamu.",
             endpoint: "/api/pinterest?q="
+        },
+        {
+            method: "GET",
+            title: "Spotify Search",
+            status: "online",
+            description: "Mencari lagu dengan informasi lengkap lainnya berdasarkan query (q) kamu.",
+            endpoint: "/api/spotifysearch?q="
         }
     ],
     "AI": [
