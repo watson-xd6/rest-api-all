@@ -306,6 +306,36 @@ function updateStatistics() {
     document.getElementById('offline-endpoints').textContent = offlineEndpoints;
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const switchContainer = document.createElement('div');
+    switchContainer.className = 'theme-switch-container';
+    switchContainer.innerHTML = `
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider">
+                <i class="fas fa-sun icon sun-icon"></i>
+                <i class="fas fa-moon icon moon-icon"></i>
+            </span>
+        </label>
+    `;
+    document.body.appendChild(switchContainer);
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    const themeToggle = document.getElementById('theme-toggle');
+    if (isDarkMode) {
+        document.body.classList.add('dark-theme');
+        themeToggle.checked = true;
+    }
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('darkMode', 'false');
+        }
+    });
+});
+
 function loadApiData() {
     const apiCategoriesContainer = document.getElementById('api-categories');
 
