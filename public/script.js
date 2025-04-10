@@ -285,6 +285,27 @@ function setupToggleDescriptions() {
     });
 }
 
+function updateStatistics() {
+    let totalEndpoints = 0;
+    let onlineEndpoints = 0;
+    let offlineEndpoints = 0;
+
+    for (const category in apiData) {
+        apiData[category].forEach(api => {
+            totalEndpoints++;
+            if (api.status === 'online') {
+                onlineEndpoints++;
+            } else {
+                offlineEndpoints++;
+            }
+        });
+    }
+
+    document.getElementById('total-endpoints').textContent = totalEndpoints;
+    document.getElementById('online-endpoints').textContent = onlineEndpoints;
+    document.getElementById('offline-endpoints').textContent = offlineEndpoints;
+}
+
 function loadApiData() {
     const apiCategoriesContainer = document.getElementById('api-categories');
 
@@ -309,6 +330,7 @@ function loadApiData() {
     }
 
     setupToggleDescriptions();
+    updateStatistics();
 }
 
 document.addEventListener('DOMContentLoaded', loadApiData);
