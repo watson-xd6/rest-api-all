@@ -96,7 +96,7 @@ const apiData = {
         {
             method: "GET",
             title: "DuckDuckGo Search",
-            status: "online",
+            status: "offline",
             description: "Mencari apapun dan semuanya dari DuckDuckGo dengan mudah.",
             endpoint: "/api/duckduckgo?q="
         },
