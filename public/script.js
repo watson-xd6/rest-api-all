@@ -88,6 +88,20 @@ const apiData = {
         },
         {
             method: "GET",
+            title: "Google Search",
+            status: "online",
+            description: "Mencari apapun dan semuanya dari Google dengan cepat.",
+            endpoint: "/api/googlesearch?q="
+        },
+        {
+            method: "GET",
+            title: "DuckDuckGo Search",
+            status: "online",
+            description: "Mencari apapun dan semuanya dari DuckDuckGo dengan mudah.",
+            endpoint: "/api/duckduckgo?q="
+        },
+        {
+            method: "GET",
             title: "Pinterest",
             status: "online",
             description: "Mencari gambar di Pinterest berdasarkan query (q) kamu.",
