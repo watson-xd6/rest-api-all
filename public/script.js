@@ -218,6 +218,29 @@ const apiData = {
     ]      
 };
 
+// Fungsi Pencarian
+function searchEndpoints() {
+  const searchInput = document.getElementById('search-input');
+  const searchTerm = searchInput.value.toLowerCase();
+  
+  document.querySelectorAll('.api-item').forEach(item => {
+    const title = item.querySelector('.api-title').textContent.toLowerCase();
+    const description = item.querySelector('.api-description p').textContent.toLowerCase();
+    item.style.display = (title.includes(searchTerm) || description.includes(searchTerm)) 
+      ? 'block' 
+      : 'none';
+  });
+
+  // Sembunyikan kategori yang kosong
+  document.querySelectorAll('.api-category').forEach(category => {
+    const hasVisibleItems = category.querySelector('.api-item[style="display: block;"]');
+    category.style.display = hasVisibleItems ? 'block' : 'none';
+  });
+}
+
+// Event Listener untuk Input
+document.getElementById('search-input').addEventListener('input', searchEndpoints);
+
 function createApiItem(api) {
     const apiItem = document.createElement('div');
     apiItem.className = 'api-item';

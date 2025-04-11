@@ -144,6 +144,39 @@ h1 {
     text-align: center;
 }
 
+/* Search Container */
+.search-container {
+  position: relative;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-left: 40px;
+  border: 2px solid var(--item-border);
+  border-radius: 25px;
+  font-size: 16px;
+  background: var(--container-bg);
+  color: var(--text-color);
+  outline: none;
+  transition: border 0.3s;
+}
+
+#search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.search-container i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
 /* Gaya untuk Kategori */
 .api-category {
     margin-bottom: 30px;
