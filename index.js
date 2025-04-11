@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 
 const routes = [
     "ytdl", "twitterdl", "igdl", "fbdl", "ttdl", "gitclone", "spotifydl",
-    "githubstalk", "searchgroups", "ttsearch", "ytsearch", "npmsearch",
+    "githubstalk", "searchgroups", "ttsearch", "ytsearch", "npmsearch", "googlesearch", "duckduckgo",
     "pinterest", "spotifysearch", "llama-3.3-70b-versatile", "gemini",
     "txt2img", "ssweb", "translate", "nulis", "cuaca", "qrcodegenerator",
     "vcc", "cekkhodam", "tahukahkamu", "brat", "qc", "detiknews", "kompasnews"
