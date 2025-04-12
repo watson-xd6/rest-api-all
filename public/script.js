@@ -53,13 +53,6 @@ const apiData = {
     "Search": [
         {
             method: "GET",
-            title: "GitHub Stalk",
-            status: "online",
-            description: "API untuk melihat profil GitHub pengguna.",
-            endpoint: "/api/githubstalk?username="
-        },
-        {
-            method: "GET",
             title: "Search Groups",
             status: "online",
             description: "API untuk mencari grup WhatsApp berdasarkan kata kunci.",
@@ -115,6 +108,22 @@ const apiData = {
             endpoint: "/api/spotifysearch?q="
         }
     ],
+    "Stalker": [
+        {
+            method: "GET",
+            title: "Genshin Stalk",
+            status: "online",
+            description: "Stalking akun genshin berdasarkan UID kamu.",
+            endpoint: "/api/gistalk?uid="
+        },
+        {
+            method: "GET",
+            title: "GitHub Stalk",
+            status: "online",
+            description: "Stalking akun GitHub berdasarkan username.",
+            endpoint: "/api/githubstalk?username="
+        }
+    ],      
     "AI": [
         {
             method: "GET",
