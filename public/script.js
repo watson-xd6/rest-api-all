@@ -60,6 +60,13 @@ const apiData = {
         },
         {
             method: "GET",
+            title: "Random Meme",
+            status: "online",
+            description: "Gambar random yang berisi Meme dan bisa di tentukan count(jumlah) nya.",
+            endpoint: "/api/randommeme?count="
+        },  
+        {
+            method: "GET",
             title: "TikTok Search",
             status: "online",
             description: "API untuk mencari video dari TikTok berdasarkan query.",
@@ -148,6 +155,13 @@ const apiData = {
         }
     ],
     "Tools": [
+        {
+            method: "GET",
+            title: "Genshin Character Build",
+            status: "online",
+            description: "Build karakter Genshin Impact yang lengkap berdasarkan query (q) kamu.",
+            endpoint: "/api/genshinbuild?character="
+        }
         {
             method: "GET",
             title: "Screenshot Web",
@@ -241,7 +255,6 @@ const apiData = {
     ]      
 };
 
-// Fungsi Pencarian
 function searchEndpoints() {
   const searchInput = document.getElementById('search-input');
   const searchTerm = searchInput.value.toLowerCase();
@@ -254,14 +267,12 @@ function searchEndpoints() {
       : 'none';
   });
 
-  // Sembunyikan kategori yang kosong
   document.querySelectorAll('.api-category').forEach(category => {
     const hasVisibleItems = category.querySelector('.api-item[style="display: block;"]');
     category.style.display = hasVisibleItems ? 'block' : 'none';
   });
 }
 
-// Event Listener untuk Input
 document.getElementById('search-input').addEventListener('input', searchEndpoints);
 
 function createApiItem(api) {
