@@ -160,7 +160,7 @@ const apiData = {
             title: "Genshin Character Build",
             status: "online",
             description: "Build karakter Genshin Impact yang lengkap berdasarkan query (q) kamu.",
-            endpoint: "/api/genshinbuild?character="
+            endpoint: "/api/genshinbuild?q="
         },
         {
             method: "GET",
