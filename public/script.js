@@ -230,9 +230,9 @@ const apiData = {
             endpoint: "/api/brat?text="
         },
         {
-            method: "POST",
+            method: "GET",
             title: "Quoted Chat",
-            status: "offline",
+            status: "online",
             description: "Membuat gambar dengan desain quoted chat yang bisa kamu custom nama, color, foto profile, dan lainnya.",
             endpoint: "/api/qc"
         }
