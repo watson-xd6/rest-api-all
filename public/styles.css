@@ -273,6 +273,76 @@ h1 {
     font-size: 14px;
     color: var(--text-color);
 }
+
+/* Container Tombol */
+.api-button-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.api-description button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.api-description button:first-child {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.api-description button:last-child {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.api-description button i {
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.api-description button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.api-description button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+@media (max-width: 480px) {
+    .api-button-container {
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 10px;
+    }
+    
+    .api-description button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .api-description button i {
+        margin-right: 6px;
+        font-size: 13px;
+    }
+}
+
 /* Contoh Response */
 .api-response {
     margin: 1px 0;

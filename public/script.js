@@ -558,33 +558,48 @@ function createApiItem(api) {
 
     const apiDescriptionText = document.createElement('p');
     apiDescriptionText.textContent = api.description;
+    apiDescription.appendChild(apiDescriptionText);
 
     const apiEndpoint = document.createElement('div');
     apiEndpoint.className = 'api-endpoint';
     apiEndpoint.textContent = `Endpoint: ${api.endpoint}`;
-
-    const apiButton = document.createElement('button');
-    apiButton.textContent = 'Akses Endpoint';
-    apiButton.onclick = () => window.location.href = api.endpoint;
-
-if(exampleResponses[api.title]) {
-    const apiResponse = document.createElement('div');
-    apiResponse.className = 'api-response';
-    
-    const responseTitle = document.createElement('strong');
-    responseTitle.textContent = 'Contoh Response:';
-    
-    const responsePre = document.createElement('pre');
-    responsePre.innerHTML = syntaxHighlight(exampleResponses[api.title]);
-    
-    apiResponse.appendChild(responseTitle);
-    apiResponse.appendChild(responsePre);
-    apiDescription.appendChild(apiResponse);
-}
-
-    apiDescription.appendChild(apiDescriptionText);
     apiDescription.appendChild(apiEndpoint);
-    apiDescription.appendChild(apiButton);
+
+    // Perbaikan untuk button container dan button
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'api-button-container';
+
+    const accessButton = document.createElement('button');
+    accessButton.innerHTML = '<i class="fas fa-external-link-alt"></i> Akses Endpoint';
+    accessButton.onclick = () => window.location.href = api.endpoint;
+
+    const copyButton = document.createElement('button');
+    copyButton.innerHTML = '<i class="far fa-copy"></i> Salin Endpoint';
+    copyButton.onclick = () => {
+        navigator.clipboard.writeText(api.endpoint)
+            .then(() => alert('Endpoint berhasil disalin!'))
+            .catch(err => console.error('Gagal menyalin:', err));
+    };
+
+    buttonContainer.appendChild(accessButton);
+    buttonContainer.appendChild(copyButton);
+    apiDescription.appendChild(buttonContainer);
+
+    // Tambah contoh response jika ada
+    if(exampleResponses && exampleResponses[api.title]) {
+        const apiResponse = document.createElement('div');
+        apiResponse.className = 'api-response';
+        
+        const responseTitle = document.createElement('strong');
+        responseTitle.textContent = 'Contoh Response:';
+        
+        const responsePre = document.createElement('pre');
+        responsePre.innerHTML = syntaxHighlight(exampleResponses[api.title]);
+        
+        apiResponse.appendChild(responseTitle);
+        apiResponse.appendChild(responsePre);
+        apiDescription.appendChild(apiResponse);
+    }
     
     apiItem.appendChild(apiHeader);
     apiItem.appendChild(apiDescription);
