@@ -1,3 +1,242 @@
+const exampleResponses = {
+  "YouTube Downloader": {
+    status: "error",
+    message: "Maaf, endpoint ini sedang error."
+  },
+  "Twitter Downloader": {
+    status: "200",
+    source: "https://x.com/ytgnoob/status/974637241837355009",
+    download_link: "https://dl.snapcdn.app..."
+  },
+  "Instagram Downloader": {
+    status: "error",
+    message: "Maaf, endpoint ini sedang error."
+  },
+  "Facebook Downloader": {
+    status: "200",
+    source: "https://www.facebook.com/reel/633313599644588?mibextid=rS40aB7S9Ucbxw6v",
+    download_link: "https://video-dfw5-2.xx.fbcdn.net..."
+  },
+  "TikTok Downloader": {
+    status: "200",
+    source: "https://vt.tiktok.com/ZShRPJfVr/",
+    download_links: [
+      {
+        quality: "HD",
+        format: "Unknown",
+        url: "https://v16m-default.tiktokcdn.com..."
+      }]
+  },
+  "GitHub Cloning": {
+    status: "true",
+    repository: "Kwkwkwjwowj/rest-api-all",
+    download_url: "https://api.github.com/repos/Kwkwkwjwowj/rest-api-all/zipball",
+    filename: "Kwkwkwjwowj-rest-api-all-6221e15.zip"
+  },
+  "Spotify Downloader": {
+status: "true",
+    result: {
+      title: "Dernière danse",
+      artist: "Indila",
+      duration_ms: "197142",
+      image: "https://i.scdn.co...",
+      download: "https://api.fabdl.com/spotify/download-mp3..."
+    }
+  },
+  "Search Groups": {
+    status: "200",
+    result: [
+      {
+        title: "🔥𝙍𝙞𝙯-𝙞𝙦 𝙈𝙖𝙧𝙠𝙚𝙩𝙥𝙡𝙖𝙘𝙚🔥",
+        thumb: "https://pps.whatsapp.net/v...",
+        link: "https://chat.whatsapp.com..."
+      }]
+  },
+  "Random Meme": {
+      title: "1cak News",
+      imgUrl: "https://1cak.com/posts..."
+  },
+  "TikTok Search": {
+    status: "200",
+    title: "windah old💀#windahbasudara",
+    video_url: "https://v16m.tiktokcdn.com...",
+  },
+  "YouTube Search": {
+    status: "200",
+    result: [
+      {
+      title: "Kisah Seorang Penyendiri di Jepang - BrokenLore Don't Watch Indonesia",
+      author: "MiawAug",
+      thumbnail: "https://i.ytimg.com/vi/ac53K1GYlBE/hq720.jpg",
+      url: "https://youtube.com/watch?v=ac53K1GYlBE",
+      duration: "1:05:02",
+      views: "61779"
+    }
+    ]
+  },
+  "NPM Search": {
+    status: "200",
+    result: [
+      {
+      name: "axios",
+      version: "1.9.0",
+      description: "Promise based HTTP client for the browser and node.js",
+      link: "https://www.npmjs.com/package/axios"
+    }
+    ]
+  },
+  "Google Search": {
+    status: "200",
+    results: [
+      {
+      title: "MiawAug",
+      link: "https://www.youtube.com/channel/UC3J4Q1grz46bdJ7NJLd4DGw",
+      snippet: "Popular videos · Gw Udah Siap ke Basement - Hello Neighbor Indonesia (Act 3 #3) · PPAP - Indonesia Cover BY MIAWAUG · Ending Helikopter / Helicopter - Granny ...",
+    }
+    ]
+  },
+  "DuckDuckGo Search": {
+    status: "error",
+    message: "Maaf, endpoint ini sedang error."
+  },
+  "Pinterest": {
+    status: "200",
+    results: [
+      {
+      upload_by: "itssunnyvale",
+      caption: "windah senyum Roblox",
+      image: "https://i.pinimg.com/originals/38/e1/e7/38e1e7671c6db8842ce55c44a1e8c3a0.jpg",
+      source: "https://id.pinterest.com/pin/53198839342371176"
+    }
+    ]
+  },
+  "Spotify Search": {
+    status: "true",
+    result: [
+      {
+      title: "Dernière danse",
+      artist: "Indila",
+      duration_ms: "197142",
+      link: "https://open.spotify.com/track/5fIZ683j2xPeLAXfHeWKEG",
+      image: "https://i.scdn.co/image/ab67616d0000b273d691a8f53f6b487ecbe27cbf"
+    }
+    ]
+  },
+  "Genshin Stalk": {
+    status: "200",
+  uid: "888783721",
+  detail_url: "https://enka.network/u/888783721",
+  screenshot: "https://mini.s-shot.ru/990x810/PNG/975/Z100/?https://enka.network/u/888783721/",
+  info: {
+    nickname: "BloxBotz",
+    level: "57",
+    worldLevel: "8",
+    achievement: "632",
+    nameCardId: "210219",
+    spiralAbyss: "12-1"
+  }
+  },
+  "GitHub Stalk": {
+    status: "true",
+  code: "200",
+  creator: "OwnBlox",
+  data: {
+    name: "microsoft",
+    username: "microsoft",
+    followers: "90.7k",
+    following: "0",
+    repository: "0",
+    avatar: "https://avatars.githubusercontent.com/u/1209?s=70&v=4?size=400",
+    profile_url: "https://github.com/microsoft"
+  }
+  },
+  "LLaMA 3.3 70B Versatile": {
+  status: "200",
+  model: "llama-3.3-70b-versatile",
+  response: "Hello. How can I help you today?"
+  },
+  "Gemini AI": {
+    sukses: "true",
+  jawaban: "Halo juga! 👋😊 Apa kabar? 🔥 Ada yang bisa saya bantu? 😊"
+  },
+  "Txt2Img": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Genshin Character Build": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Screenshot Web": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Translate": {
+  status: "200",
+  original_text: "How Are You?",
+  translated_text: "Apa kabarmu?",
+  lang_from: "en",
+  lang_to: "id"
+  },
+  "Nulis": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Cuaca": {
+  status: "200",
+  result: {
+    kota: "Jakarta, Indonesia",
+    zona_waktu: "GMT +0",
+    suhu: "27°C",
+    kondisi: "Mostly sunny",
+    kelembaban: "87%",
+    angin: "1 km/h",
+    tekanan: "undefined mb"
+  }
+  },
+  "QR Code Generator": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Credit Card Generator": {
+    type: "Visa",
+    name: "Audra Rowe",
+    number: "4539008348835948",
+    cvv: "950",
+    expiry: "08/25"
+  },
+  "Cek Khodam": {
+  status: "200",
+  result: "Khodam OwnBlox adalah Siluman Ular Merah penjaga kekayaan dan pelindung dari segala kejahatan ilmu hitam."
+  },
+  "Tahu Kah Kamu?": {
+  status: "200",
+  result: "Tahukah kamu? Lumba-lumba tidur dengan satu mata terbuka."
+  },
+  "Brat Image": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Quoted Chat": {
+    status: "200",
+    results: "[ Image ]"
+  },
+  "Detik News": {
+  status: "true",
+  source: "https://news.detik.com/",
+  result: [
+    {
+      title: "Ribut-ribut Maut di Asrama Pelaut",
+      link: "https://news.detik.com/berita/d-7894123/ribut-ribut-maut-di-asrama-pelaut"
+    }
+  ]  
+  },
+  "Kompas": {
+    status: "error",
+    message: "Maaf, endpoint ini sedang error."
+  }
+}
+
 const apiData = {
     "Downloader": [
         {
@@ -255,6 +494,21 @@ const apiData = {
     ]      
 };
 
+function syntaxHighlight(json) {
+    let jsonStr = JSON.stringify(json, null, 2)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    return jsonStr.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, 
+        function(match) {
+            let cls = 'number';
+            if (/^"/.test(match)) cls = match.endsWith(':') ? 'key' : 'string';
+            else if (/true|false/.test(match)) cls = 'boolean';
+            else if (/null/.test(match)) cls = 'null';
+            return `<span class="${cls}">${match}</span>`;
+        });
+}
+
 function searchEndpoints() {
   const searchInput = document.getElementById('search-input');
   const searchTerm = searchInput.value.toLowerCase();
@@ -313,10 +567,25 @@ function createApiItem(api) {
     apiButton.textContent = 'Akses Endpoint';
     apiButton.onclick = () => window.location.href = api.endpoint;
 
+if(exampleResponses[api.title]) {
+    const apiResponse = document.createElement('div');
+    apiResponse.className = 'api-response';
+    
+    const responseTitle = document.createElement('strong');
+    responseTitle.textContent = 'Contoh Response:';
+    
+    const responsePre = document.createElement('pre');
+    responsePre.innerHTML = syntaxHighlight(exampleResponses[api.title]);
+    
+    apiResponse.appendChild(responseTitle);
+    apiResponse.appendChild(responsePre);
+    apiDescription.appendChild(apiResponse);
+}
+
     apiDescription.appendChild(apiDescriptionText);
     apiDescription.appendChild(apiEndpoint);
     apiDescription.appendChild(apiButton);
-
+    
     apiItem.appendChild(apiHeader);
     apiItem.appendChild(apiDescription);
 
