@@ -422,7 +422,7 @@ h1 {
 
 /* Tombol Toggle Response */
 .toggle-response-btn {
-    background-color: #9C27B0 !important;
+    background-color: #F44336 !important;
     color: white !important;
     padding: 8px 15px !important;
     margin-top: 10px;
@@ -432,7 +432,7 @@ h1 {
 }
 
 .toggle-response-btn:hover {
-    background-color: #7B1FA2 !important;
+    background-color: #F44336 !important;
     transform: translateY(-1px);
 }
 
@@ -448,11 +448,11 @@ h1 {
 
 /* Dark Theme */
 .dark-theme .toggle-response-btn {
-    background-color: #6A1B9A !important;
+    background-color: #F44336 !important;
 }
 
 .dark-theme .toggle-response-btn:hover {
-    background-color: #4A148C !important;
+    background-color: #F44336 !important;
 }
 
 /* Desktop Layout */
