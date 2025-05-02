@@ -558,12 +558,10 @@ function createApiItem(api) {
 
     const apiDescriptionText = document.createElement('p');
     apiDescriptionText.textContent = api.description;
-    apiDescription.appendChild(apiDescriptionText);
 
     const apiEndpoint = document.createElement('div');
     apiEndpoint.className = 'api-endpoint';
     apiEndpoint.textContent = `Endpoint: ${api.endpoint}`;
-    apiDescription.appendChild(apiEndpoint);
 
     // Perbaikan untuk button container dan button
     const buttonContainer = document.createElement('div');
@@ -583,11 +581,17 @@ function createApiItem(api) {
 
     buttonContainer.appendChild(accessButton);
     buttonContainer.appendChild(copyButton);
-    apiDescription.appendChild(buttonContainer);
+
+    // Inisialisasi variabel apiResponse di luar blok if
+    let apiResponse = null;
+
+    // Buat container untuk tombol response
+    const responseButtonContainer = document.createElement('div');
+    responseButtonContainer.className = 'response-button-container';
 
     // Tambah contoh response jika ada
     if(exampleResponses && exampleResponses[api.title]) {
-        const apiResponse = document.createElement('div');
+        apiResponse = document.createElement('div');
         apiResponse.className = 'api-response';
         
         const responseTitle = document.createElement('strong');
@@ -598,7 +602,36 @@ function createApiItem(api) {
         
         apiResponse.appendChild(responseTitle);
         apiResponse.appendChild(responsePre);
-        apiDescription.appendChild(apiResponse);
+        
+        // Tombol toggle response
+        const toggleResponseBtn = document.createElement('button');
+        toggleResponseBtn.className = 'toggle-response-btn';
+        toggleResponseBtn.innerHTML = '<i class="fas fa-code"></i> Tampilkan Response';
+        let isResponseVisible = false;
+
+        toggleResponseBtn.onclick = () => {
+            isResponseVisible = !isResponseVisible;
+            apiResponse.style.display = isResponseVisible ? 'block' : 'none';
+            toggleResponseBtn.innerHTML = isResponseVisible 
+                ? '<i class="fas fa-times"></i> Sembunyikan Response' 
+                : '<i class="fas fa-code"></i> Tampilkan Response';
+        };
+
+        responseButtonContainer.appendChild(toggleResponseBtn);
+        
+        // Sembunyikan response awal
+        apiResponse.style.display = 'none';
+    }
+    
+    // Menambahkan elemen-elemen ke apiDescription dengan urutan yang tepat
+    apiDescription.appendChild(apiDescriptionText);
+    apiDescription.appendChild(apiEndpoint);
+    apiDescription.appendChild(buttonContainer);
+    
+    // Tambahkan response button container jika ada response
+    if(apiResponse) {
+        apiDescription.appendChild(responseButtonContainer);
+        apiDescription.appendChild(apiResponse); // Response di bawah tombol toggle
     }
     
     apiItem.appendChild(apiHeader);

@@ -420,7 +420,68 @@ h1 {
     }
 }
 
+/* Tombol Toggle Response */
+.toggle-response-btn {
+    background-color: #9C27B0 !important;
+    color: white !important;
+    padding: 8px 15px !important;
+    margin-top: 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    width: 100%; /* Untuk mobile */
+}
 
+.toggle-response-btn:hover {
+    background-color: #7B1FA2 !important;
+    transform: translateY(-1px);
+}
+
+.toggle-response-btn i {
+    margin-right: 6px;
+}
+
+.response-button-container {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Dark Theme */
+.dark-theme .toggle-response-btn {
+    background-color: #6A1B9A !important;
+}
+
+.dark-theme .toggle-response-btn:hover {
+    background-color: #4A148C !important;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+    .toggle-response-btn {
+        width: auto; /* Reset width mobile */
+        padding: 12px 30px !important;
+        border-radius: 8px;
+        margin: 15px auto; /* Posisi tengah */
+        display: block; /* Untuk margin auto */
+    }
+
+    .response-container {
+        max-width: 700px;
+        margin: 20px auto; /* Posisi tengah */
+        padding: 25px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); /* Presisi tengah */
+    }
+
+    .response-container pre {
+        padding: 20px;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+    }
+}
 
 
 .api-endpoint {
