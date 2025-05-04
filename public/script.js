@@ -1,7 +1,16 @@
 const exampleResponses = {
   "YouTube Downloader": {
-    status: "error",
-    message: "Maaf, endpoint ini sedang error."
+    status: "true",
+    result: {
+    title: "mie sedap goreng praktis 2000an #food #foodie #kuliner #idejualan",
+    thumbnail: "https://i.ytimg.com/vi/H5XVdeoxPtQ/maxresdefault.jpg",
+    audio_download: "https://cdn303.savetube.su/download-direct/audio/128/e88fd68469efd77bdb04741c9252bfe1a2de9f2a",
+    video_download: "https://cdn304.savetube.su/media/H5XVdeoxPtQ/mie-sedap-goreng-praktis-2000an-food-foodie-kuliner-idejualan-720-ytshorts.savetube.me.mp4",
+    audio_format: "mp3",
+    video_format: "mp4",
+    video_quality: "720p",
+    duration: "51"
+   }
   },
   "Twitter Downloader": {
     status: "200",
