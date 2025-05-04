@@ -242,9 +242,9 @@ const apiData = {
         {
             method: "GET",
             title: "YouTube Downloader",
-            status: "offline",
+            status: "online",
             description: "API untuk mendownload video atau shorts dari YouTube.",
-            endpoint: "/api/ytdl?url=&format="
+            endpoint: "/api/ytdl?url=&type="
         },
         {
             method: "GET",
